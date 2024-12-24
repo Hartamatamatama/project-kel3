@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portofolio Web Developer dengan tema Doraemon">
+    <title>Hallo, Saya Nur Padilah</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Lora:wght@400;700&family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Styling -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fbc2eb, #a6c1ee, #c3cfe2);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.7);
+            /* Transparan dengan sedikit putih */
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            font-family: 'Lora', serif;
+            color: #2a2a72;
+            margin: 0;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+            letter-spacing: -1px;
+        }
+
+        header p {
+            font-size: 1.3em;
+            color: #333;
+            margin-top: 10px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            width: 90%;
+            margin: 80px auto;
+            max-width: 1200px;
+        }
+
+        .section-title {
+            font-size: 2.8em;
+            text-align: center;
+            color: #2a2a72;
+            margin-bottom: 40px;
+            font-family: 'Lora', serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: -webkit-linear-gradient(45deg, #fbc2eb, #6a5acd);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .about,
+        .projects,
+        .education,
+        .experience,
+        .skills,
+        .contact {
+            background-color: rgba(255, 255, 255, 0.7);
+            /* Transparan */
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            transition: all 0.4s ease;
+        }
+
+        .about:hover,
+        .projects:hover,
+        .education:hover,
+        .experience:hover,
+        .skills:hover,
+        .contact:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .about img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .about h2 {
+            font-size: 2.8em;
+            color: #2a2a72;
+            margin-bottom: 15px;
+            font-family: 'Dancing Script', cursive;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .about p {
+            font-size: 1.2em;
+            color: #555;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* Education, Work, Skills - Layout Changes */
+        .education ul,
+        .experience ul,
+        .skills ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .education li,
+        .experience li,
+        .skills li {
+            background-color: #f5f5f5;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            color: #444;
+        }
+
+        .education li:hover,
+        .experience li:hover,
+        .skills li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .education h3,
+        .experience h3,
+        .skills h3 {
+            font-size: 1.9em;
+            color: #2a2a72;
+            margin-bottom: 12px;
+            font-family: 'Lora', serif;
+            background: -webkit-linear-gradient(45deg, #fbc2eb, #6a5acd);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .education p,
+        .experience p,
+        .skills p {
+            font-size: 1.1em;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Projects Section */
+        .projects ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0;
+        }
+
+        .projects li {
+            background-color: #f5f5f5;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            color: #444;
+            transition: all 0.3s ease;
+        }
+
+        .projects li:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .projects h3 {
+            font-size: 1.8em;
+            color: #2a2a72;
+            font-family: 'Lora', serif;
+            background: -webkit-linear-gradient(45deg, #fbc2eb, #6a5acd);
+            -webkit-background-clip: text;
+            color: transparent;
+            text-transform: uppercase;
+        }
+
+        /* Contact Section */
+        .contact p {
+            font-size: 1.2em;
+            color: #444;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact a {
+            color: #ffffff;
+            background-color: #6a5acd;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 1.2em;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact a:hover {
+            background-color: #5b4eb2;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Footer */
+        footer p {
+            font-size: 1.1em;
+            color: #777;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Animation Effects */
+        .fadeIn {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Hallo, Saya Nur Padilah</h1>
+        <p>Mahasiswa Universitas Yatsi Madani Program Studi Ilmu Komputer</p>
+    </header>
+
+    <div class="container fadeIn">
+        <!-- About Section -->
+        <section class="about">
+            <img src="pas.jpg" alt="Doraemon">
+            <h2>Hai!!</h2>
+            <p>Selamat datang di portofolio saya! Saya seorang Mahasiswa Ilmu Komputer yang memiliki ketertarikan besar
+                di dunia teknologi. Saya senang mempelajari berbagai hal tentang teknologi, pemrograman, dan
+                pengembangan solusi digital yang inovatif. Minat saya adalah terus mengeksporasi dan mengembangkan
+                kemampuan dibidang ini untuk menghadapi perkembangan teknologi yang pesat.</p>
+        </section>
+
+        <!-- Education Section -->
+        <section class="education">
+            <h2 class="section-title">Pendidikan</h2>
+            <ul>
+                <li>
+                    <h3>SDN Pakualam</h3>
+                    <p><strong> 2011 - 2017 </strong><br> Menyelesaikan sekolah dasar sambil membangun fondasi
+                        keterampilan belajar dan disiplin.</p>
+                </li>
+                <li>
+                    <h3>MTs AL-Muhtadiin</h3>
+                    <p><strong> 2011 - 2017 </strong><br> Mengembangkan minat belajar dan aktif dalam kegiatan akademik
+                        maupun non-akademik.</p>
+                </li>
+                <li>
+                    <h3>MAs Nurussa'adah</h3>
+                    <p><strong> 2020 - 2023 </strong><br> Melanjutkan pendidikan dengan fokus pada pengembangan
+                        kemampuan berpikir kritis dan pemecahan masalah.</p>
+                </li>
+                <li>
+                    <h3>Universitas Yatsi Madani</h3>
+                    <p><strong> 2023 - </strong><br> Sedang menempuh pendidikan di program studi Ilmu Komputer dengan
+                        fokus pada pemahaman teknologi, pemrograman, dan pengembangan solusi digital yang inovatif.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience">
+            <h2 class="section-title">Pengalaman</h2>
+            <ul>
+                <li>
+                    <h3>Anggota di Organisasi Mahasiswa</h3>
+                    <p><strong>Tahun:</strong> 2023</p>
+                    <p>Terlibat dalam pengorganisasian berbagai acara kampus, bekerja sama dengan tim, dan berkontribusi
+                        pada kesuksesan organisasi mahasiswa.</p>
+                </li>
+                <li>
+                    <h3>Admin Outlet - JNT Cargo</h3>
+                    <p><strong>Tahun:</strong> 2023 </p>
+                    <p>Membuat dan mencetak resi pengirim untuk pelanggan, memastikan data pengirim tercatat dengan
+                        akurat, menyeken barcode atau kode pada barang untuk memastikan proses pengiriman tercatat
+                        dengan akurat dalam sistem.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects">
+            <h2 class="section-title">Proyek Saya</h2>
+            <ul>
+                <li>
+                    <h3>Website Portofolio</h3>
+                    <p>Membangun portofolio web pribadi untuk menampilkan keahlian dan proyek-proyek saya.</p>
+                </li>
+                <li>
+                    <h3>Sistem Menejemen Penjualan</h3>
+                    <p>Mengembangkan sistem menejemen penjualan berbasis database untuk mencatat produk menggunakan SQL.
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact">
+            <p>Ingin bekerja sama atau bertanya-tanya lebih lanjut? Jangan ragu untuk menghubungi saya!</p>
+            <a href="nurpadilah623@gmail.com">nurpadilah623@gmail.com</a>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Portofolio | Dibuat dengan 💙 oleh Nur Padilah</p>
+    </footer>
+
+</body>
+
+</html>
